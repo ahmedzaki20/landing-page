@@ -37,23 +37,30 @@ mySections.forEach(element=>{
     myAncor.textContent=myInfo;
     myli.appendChild(myAncor);
     myFragment.appendChild(myli);
-    const myAncorId='#'+element.getAttribute('id');
-    myAncor.setAttribute('href',myAncorId);
+   // Scroll to anchor ID using scrollTO event
+    myAncor.addEventListener('click',function(event)
+    {
+        event.preventDefault();
     })
-    myUlList.appendChild(myFragment);
+    function scroll()
+{
+element.scrollIntoView(true);
+
+}
+
+    myAncor.addEventListener('click',scroll)
+    })
+     /*End of scrolling function*/
+    
 /**
  * End Helper Functions
  * Begin Main Functions
- * 
-*/
 
+*/
+myUlList.appendChild(myFragment);
 // build the nav
 
 // Add class 'active' to section when near top of viewport
-
-  
-// Scroll to anchor ID using scrollTO event
-
 function myActive() {mySections.forEach(alink=>
     {
     const secArea=alink.getBoundingClientRect()
